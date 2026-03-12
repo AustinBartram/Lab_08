@@ -40,12 +40,11 @@ module top(
     wire [3:0] fire;
     wire [3:0] school;
     wire [3:0] rib_shack;
-
+    
     assign local_lib = (demux_sel == 2'b00) ? internet_line : 4'b0000;
     assign fire      = (demux_sel == 2'b01) ? internet_line : 4'b0000;
     assign school    = (demux_sel == 2'b10) ? internet_line : 4'b0000;
     assign rib_shack = (demux_sel == 2'b11) ? internet_line : 4'b0000;
-
 
     // -------------------------
     // Connect to LEDs
@@ -57,3 +56,4 @@ module top(
     assign led[15:12]  = rib_shack;   // Rib Shack
 
 endmodule
+
