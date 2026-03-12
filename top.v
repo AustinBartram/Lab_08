@@ -6,9 +6,7 @@ module top(
     output [15:0] led    // outputs
 );
 
-    // -------------------------
     // Select signals
-    // -------------------------
 
     wire [1:0] mux_sel;
     wire [1:0] demux_sel;
@@ -16,11 +14,8 @@ module top(
     assign mux_sel   = {btnU, btnL};   // select sender
     assign demux_sel = {btnR, btnD};   // select receiver
 
-
-    // -------------------------
     // Multiplexer output
-    // -------------------------
-
+    
     wire [3:0] internet_line;
 
     assign internet_line =
@@ -31,10 +26,7 @@ module top(
                            sw[15:12])    // Jill
         : 4'b0000;
 
-
-    // -------------------------
-    // Demultiplexer outputs
-    // -------------------------
+    // Demultiplexer output
 
     wire [3:0] local_lib;
     wire [3:0] fire;
@@ -45,10 +37,8 @@ module top(
     assign fire      = (demux_sel == 2'b01) ? internet_line : 4'b0000;
     assign school    = (demux_sel == 2'b10) ? internet_line : 4'b0000;
     assign rib_shack = (demux_sel == 2'b11) ? internet_line : 4'b0000;
-
-    // -------------------------
+    
     // Connect to LEDs
-    // -------------------------
 
     assign led[3:0]    = local_lib;   // Library
     assign led[7:4]    = fire;        // Fire Department
@@ -56,4 +46,5 @@ module top(
     assign led[15:12]  = rib_shack;   // Rib Shack
 
 endmodule
+
 
