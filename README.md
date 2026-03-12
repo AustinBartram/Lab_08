@@ -14,6 +14,8 @@ In this lab you have learned about multiplexers and demultiplexers.
 ## Names
 
 ## Summary
+This lab we got to use multiplexers and demultiplexers. Being able to choose buttons over to select witch of either port to use. 
+Running through this using the demultiplexers to choose the gate and then the individual is chosen between the multiplexers. 
 
 ## Lab Questions
 
